@@ -76,8 +76,10 @@
         <div id="body-inner">
           {{if not .IsHome}}
             <h1>{{.Title}}</h1>
+            {{ partial "custom-post-header.html" . }}
           {{end}}
 
+            
 {{define "breadcrumb"}}
 {{ if .page.Parent}}
 {{$value := (printf "<a href='%s'>%s</a> > %s" .page.Parent.URL .page.Parent.Title .value)}}
